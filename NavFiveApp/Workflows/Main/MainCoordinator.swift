@@ -2,15 +2,21 @@ import UIKit
 import NavFive
 
 struct MainCoordinator {
-    typealias Instance = WindowCoordinator<NavigationState, Action>
+    typealias Instance = NavitrollerCoordinator<NavigationState, Action>
     
-    enum NavigationState: WindowNavigationState {
-        case main(MainViewController)
+    struct NavigationState: NavitrollerState {
+        enum Step {
+            case main(MainViewController)
+        }
         
-        var asViewController: UIViewController {
-            switch self {
-            case .main(let controller):
-                return controller
+        let steps: [Step]
+        
+        var asViewControllers: [UIViewController] {
+            return steps.map { step in
+                switch step {
+                case .main(let controller):
+                    return controller
+                }
             }
         }
     }
@@ -19,13 +25,12 @@ struct MainCoordinator {
         case showMain
     }
     
-    static func make(window: UIWindow) -> Instance {
-        return WindowCoordinator(router: window, initial: .showMain) { action, state in
+    static func make(view: Instance.View) -> Instance {
+        return Instance(view: view, initial: .showMain) { action, dispatch, state in
             switch action {
             case .showMain:
                 let controller = MainViewController()
-                
-                return .main(controller)
+                return NavigationState(steps: [ .main(controller) ])
             }
         }
     }

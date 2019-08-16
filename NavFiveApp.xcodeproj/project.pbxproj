@@ -13,7 +13,7 @@
 		FA2F062B23055528005159A9 /* NavFive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2F062423055528005159A9 /* NavFive.framework */; };
 		FA2F062C23055528005159A9 /* NavFive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA2F062423055528005159A9 /* NavFive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA2F063223055569005159A9 /* WindowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F063123055569005159A9 /* WindowCoordinator.swift */; };
-		FA2F0634230555D4005159A9 /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F0633230555D4005159A9 /* NavigationState.swift */; };
+		FA2F0634230555D4005159A9 /* WindowNavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F0633230555D4005159A9 /* WindowNavigationState.swift */; };
 		FA2F063923055631005159A9 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F063823055631005159A9 /* MainCoordinator.swift */; };
 		FA2F063B23055781005159A9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F063A23055781005159A9 /* MainViewController.swift */; };
 		FA2F063F23055A09005159A9 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2F063D23055A09005159A9 /* RxSwift.framework */; };
@@ -24,6 +24,12 @@
 		FA2F065023055A3D005159A9 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA2F063D23055A09005159A9 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA2F06522305624A005159A9 /* WindowCoordinated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F06512305624A005159A9 /* WindowCoordinated.swift */; };
 		FA2F0654230565E0005159A9 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F0653230565E0005159A9 /* ViewState.swift */; };
+		FA61356C2306A63900C543A6 /* NavitrollerCoordinated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61356B2306A63900C543A6 /* NavitrollerCoordinated.swift */; };
+		FA61356E2306A75700C543A6 /* NavitrollerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61356D2306A75700C543A6 /* NavitrollerState.swift */; };
+		FA6135702306AA2300C543A6 /* NavitrollerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61356F2306AA2300C543A6 /* NavitrollerCoordinator.swift */; };
+		FA6135782306B8E900C543A6 /* CoordinatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6135772306B8E900C543A6 /* CoordinatedView.swift */; };
+		FA61357A2306BCE100C543A6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6135792306BCE100C543A6 /* Coordinator.swift */; };
+		FA61357F2306C1BA00C543A6 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA61357D2306C1BA00C543A6 /* RxRelay.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,13 +67,19 @@
 		FA2F062423055528005159A9 /* NavFive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NavFive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2F062723055528005159A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA2F063123055569005159A9 /* WindowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowCoordinator.swift; sourceTree = "<group>"; };
-		FA2F0633230555D4005159A9 /* NavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationState.swift; sourceTree = "<group>"; };
+		FA2F0633230555D4005159A9 /* WindowNavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowNavigationState.swift; sourceTree = "<group>"; };
 		FA2F063823055631005159A9 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		FA2F063A23055781005159A9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FA2F063D23055A09005159A9 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		FA2F063E23055A09005159A9 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		FA2F06512305624A005159A9 /* WindowCoordinated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowCoordinated.swift; sourceTree = "<group>"; };
 		FA2F0653230565E0005159A9 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
+		FA61356B2306A63900C543A6 /* NavitrollerCoordinated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavitrollerCoordinated.swift; sourceTree = "<group>"; };
+		FA61356D2306A75700C543A6 /* NavitrollerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavitrollerState.swift; sourceTree = "<group>"; };
+		FA61356F2306AA2300C543A6 /* NavitrollerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavitrollerCoordinator.swift; sourceTree = "<group>"; };
+		FA6135772306B8E900C543A6 /* CoordinatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatedView.swift; sourceTree = "<group>"; };
+		FA6135792306BCE100C543A6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		FA61357D2306C1BA00C543A6 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +99,7 @@
 			files = (
 				FA2F063F23055A09005159A9 /* RxSwift.framework in Frameworks */,
 				FA2F064023055A09005159A9 /* RxCocoa.framework in Frameworks */,
+				FA61357F2306C1BA00C543A6 /* RxRelay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,7 +130,6 @@
 			children = (
 				FA2F06362305561C005159A9 /* System */,
 				FA2F063523055614005159A9 /* Workflows */,
-				FA2F061423055497005159A9 /* Assets.xcassets */,
 			);
 			path = NavFiveApp;
 			sourceTree = "<group>";
@@ -125,11 +137,12 @@
 		FA2F062523055528005159A9 /* NavFive */ = {
 			isa = PBXGroup;
 			children = (
-				FA2F062723055528005159A9 /* Info.plist */,
-				FA2F063123055569005159A9 /* WindowCoordinator.swift */,
-				FA2F0633230555D4005159A9 /* NavigationState.swift */,
-				FA2F06512305624A005159A9 /* WindowCoordinated.swift */,
+				FA61356A2306A61B00C543A6 /* NavigationController */,
+				FA6135672306A5A400C543A6 /* Window */,
 				FA2F0653230565E0005159A9 /* ViewState.swift */,
+				FA6135772306B8E900C543A6 /* CoordinatedView.swift */,
+				FA6135792306BCE100C543A6 /* Coordinator.swift */,
+				FA2F062723055528005159A9 /* Info.plist */,
 			);
 			path = NavFive;
 			sourceTree = "<group>";
@@ -145,6 +158,7 @@
 		FA2F06362305561C005159A9 /* System */ = {
 			isa = PBXGroup;
 			children = (
+				FA2F061423055497005159A9 /* Assets.xcassets */,
 				FA2F060D23055495005159A9 /* AppDelegate.swift */,
 				FA2F061623055497005159A9 /* LaunchScreen.storyboard */,
 				FA2F061923055497005159A9 /* Info.plist */,
@@ -164,10 +178,31 @@
 		FA2F063C23055A09005159A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA61357D2306C1BA00C543A6 /* RxRelay.framework */,
 				FA2F063E23055A09005159A9 /* RxCocoa.framework */,
 				FA2F063D23055A09005159A9 /* RxSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA6135672306A5A400C543A6 /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				FA2F063123055569005159A9 /* WindowCoordinator.swift */,
+				FA2F0633230555D4005159A9 /* WindowNavigationState.swift */,
+				FA2F06512305624A005159A9 /* WindowCoordinated.swift */,
+			);
+			path = Window;
+			sourceTree = "<group>";
+		};
+		FA61356A2306A61B00C543A6 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				FA61356F2306AA2300C543A6 /* NavitrollerCoordinator.swift */,
+				FA61356D2306A75700C543A6 /* NavitrollerState.swift */,
+				FA61356B2306A63900C543A6 /* NavitrollerCoordinated.swift */,
+			);
+			path = NavigationController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,10 +327,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA61356E2306A75700C543A6 /* NavitrollerState.swift in Sources */,
 				FA2F0654230565E0005159A9 /* ViewState.swift in Sources */,
+				FA6135702306AA2300C543A6 /* NavitrollerCoordinator.swift in Sources */,
+				FA61356C2306A63900C543A6 /* NavitrollerCoordinated.swift in Sources */,
 				FA2F06522305624A005159A9 /* WindowCoordinated.swift in Sources */,
 				FA2F063223055569005159A9 /* WindowCoordinator.swift in Sources */,
-				FA2F0634230555D4005159A9 /* NavigationState.swift in Sources */,
+				FA2F0634230555D4005159A9 /* WindowNavigationState.swift in Sources */,
+				FA6135782306B8E900C543A6 /* CoordinatedView.swift in Sources */,
+				FA61357A2306BCE100C543A6 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +486,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/NavFiveApp/System/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -469,6 +510,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/NavFiveApp/System/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -497,6 +539,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = NavFive/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -532,6 +575,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = NavFive/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
