@@ -2,7 +2,9 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-public struct Coordinator<View: CoordinatedView, Action> {
+public struct Coordinator<AView: CoordinatedView, Action> {
+    public typealias View = AView
+    
     public struct State {
         public let viewState: ViewState<View.NavigationState>
         public let lastAction: Action
