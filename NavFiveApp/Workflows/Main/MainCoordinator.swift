@@ -1,7 +1,7 @@
 import UIKit
 import NavFive
 
-struct MainCoordinator {
+enum MainCoordinator {
     typealias Instance = NavitrollerCoordinator<NavigationState, Action>
     
     struct NavigationState: NavitrollerState {

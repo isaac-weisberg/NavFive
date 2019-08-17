@@ -3,7 +3,7 @@ import RxCocoa
 import UIKit
 
 public class NavitrollerCoordinated<NavigationState: NavitrollerState>: UINavigationController, CoordinatedView {
-    let naviSposeBag = DisposeBag()
+    public let naviSposeBag = DisposeBag()
     
     public let coordinationState = BehaviorRelay<ViewState<NavigationState>>(value: .uncoordinated)
     

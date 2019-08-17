@@ -5,7 +5,7 @@ import UIKit
 public class WindowCoordinated<NavigationState: WindowNavigationState>: UIWindow, CoordinatedView {
     typealias State = ViewState<NavigationState>
     
-    let disposeBag = DisposeBag()
+    public let naviSposeBag = DisposeBag()
     
     public let coordinationState = BehaviorRelay<State>(value: .uncoordinated)
     
@@ -29,7 +29,7 @@ private extension WindowCoordinated {
                     self.rootViewController = controller
                 }
             })
-            .disposed(by: disposeBag)
+            .disposed(by: naviSposeBag)
         
         coordinationState
             .distinctUntilChanged { prev, next in
@@ -48,6 +48,6 @@ private extension WindowCoordinated {
                     break
                 }
             })
-            .disposed(by: disposeBag)
+            .disposed(by: naviSposeBag)
     }
 }

@@ -24,6 +24,9 @@
 		FA2F065023055A3D005159A9 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA2F063D23055A09005159A9 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA2F06522305624A005159A9 /* WindowCoordinated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F06512305624A005159A9 /* WindowCoordinated.swift */; };
 		FA2F0654230565E0005159A9 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F0653230565E0005159A9 /* ViewState.swift */; };
+		FA3DA574230821F200C7CF48 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3DA573230821F200C7CF48 /* AppCoordinator.swift */; };
+		FA3DA57723082F5100C7CF48 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA61357D2306C1BA00C543A6 /* RxRelay.framework */; };
+		FA3DA57823082F5100C7CF48 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA61357D2306C1BA00C543A6 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA61356C2306A63900C543A6 /* NavitrollerCoordinated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61356B2306A63900C543A6 /* NavitrollerCoordinated.swift */; };
 		FA61356E2306A75700C543A6 /* NavitrollerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61356D2306A75700C543A6 /* NavitrollerState.swift */; };
 		FA6135702306AA2300C543A6 /* NavitrollerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61356F2306AA2300C543A6 /* NavitrollerCoordinator.swift */; };
@@ -49,6 +52,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				FA3DA57823082F5100C7CF48 /* RxRelay.framework in Embed Frameworks */,
 				FA2F064E23055A3D005159A9 /* RxCocoa.framework in Embed Frameworks */,
 				FA2F062C23055528005159A9 /* NavFive.framework in Embed Frameworks */,
 				FA2F065023055A3D005159A9 /* RxSwift.framework in Embed Frameworks */,
@@ -74,6 +78,7 @@
 		FA2F063E23055A09005159A9 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		FA2F06512305624A005159A9 /* WindowCoordinated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowCoordinated.swift; sourceTree = "<group>"; };
 		FA2F0653230565E0005159A9 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
+		FA3DA573230821F200C7CF48 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		FA61356B2306A63900C543A6 /* NavitrollerCoordinated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavitrollerCoordinated.swift; sourceTree = "<group>"; };
 		FA61356D2306A75700C543A6 /* NavitrollerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavitrollerState.swift; sourceTree = "<group>"; };
 		FA61356F2306AA2300C543A6 /* NavitrollerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavitrollerCoordinator.swift; sourceTree = "<group>"; };
@@ -87,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA3DA57723082F5100C7CF48 /* RxRelay.framework in Frameworks */,
 				FA2F064D23055A3D005159A9 /* RxCocoa.framework in Frameworks */,
 				FA2F062B23055528005159A9 /* NavFive.framework in Frameworks */,
 				FA2F064F23055A3D005159A9 /* RxSwift.framework in Frameworks */,
@@ -150,6 +156,7 @@
 		FA2F063523055614005159A9 /* Workflows */ = {
 			isa = PBXGroup;
 			children = (
+				FA3DA572230821E400C7CF48 /* App */,
 				FA2F063723055627005159A9 /* Main */,
 			);
 			path = Workflows;
@@ -183,6 +190,14 @@
 				FA2F063D23055A09005159A9 /* RxSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA3DA572230821E400C7CF48 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FA3DA573230821F200C7CF48 /* AppCoordinator.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 		FA6135672306A5A400C543A6 /* Window */ = {
@@ -317,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA3DA574230821F200C7CF48 /* AppCoordinator.swift in Sources */,
 				FA2F063B23055781005159A9 /* MainViewController.swift in Sources */,
 				FA2F060E23055495005159A9 /* AppDelegate.swift in Sources */,
 				FA2F063923055631005159A9 /* MainCoordinator.swift in Sources */,

@@ -10,11 +10,14 @@ public struct Coordinator<AView: CoordinatedView, Action> {
         public let lastAction: Action
     }
     
+    public let view: View
+    
     public let actionPublish: PublishRelay<Action>
     
     public let state: Driver<State>
     
     public init(view: View, initial action: Action, _ converter: @escaping (Action, PublishRelay<Action>, ViewState<View.NavigationState>) -> View.NavigationState) {
+        self.view = view
         let actionPublish = PublishRelay<Action>()
         self.actionPublish = actionPublish
         let navStateFlow = actionPublish
