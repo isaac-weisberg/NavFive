@@ -2,12 +2,12 @@ import RxSwift
 import RxCocoa
 import UIKit
 
-public class WindowCoordinated<NavigationState: WindowNavigationState>: UIWindow, CoordinatedView {
-    typealias State = ViewState<NavigationState>
+public class WindowCoordinated: UIWindow, CoordinatedView {
+    typealias State = NaviUnitConvertible
     
     public let naviSposeBag = DisposeBag()
     
-    public let coordinationState = BehaviorRelay<State>(value: .uncoordinated)
+    let coordinationState = BehaviorRelay<State?>(value: nil)
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,8 +24,8 @@ private extension WindowCoordinated {
     func setup() {
         coordinationState
             .bind(onNext: {[unowned self] state in
-                if let state = state.asOptional {
-                    let controller = state.asViewController
+                if let state = state {
+                    let controller = state.naviUnit.asViewController
                     self.rootViewController = controller
                 }
             })
@@ -34,17 +34,17 @@ private extension WindowCoordinated {
         coordinationState
             .distinctUntilChanged { prev, next in
                 switch (prev, next) {
-                case (.uncoordinated, .uncoordinated), (.coordinated, .coordinated):
+                case (.none, .none), (.some, .some):
                     return true
-                case (.coordinated, .uncoordinated), (.uncoordinated, .coordinated):
-                    return true
+                case (.none, .some), (.some, .none):
+                    return false
                 }
             }
             .bind(onNext: {[unowned self] state in
                 switch state {
-                case .coordinated:
+                case .some:
                     self.makeKeyAndVisible()
-                case .uncoordinated:
+                case .none:
                     break
                 }
             })

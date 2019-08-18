@@ -1,5 +1,5 @@
 import UIKit
 
-public protocol NavitrollerState {
+public protocol ArrayControllerConvertible {
     var asViewControllers: [UIViewController] { get }
 }

@@ -4,10 +4,10 @@ import NavFive
 enum AppCoordinator {
     typealias Instance = WindowCoordinator<State, Action>
     
-    enum State: WindowNavigationState {
+    enum State: WindowNaviState {
         case main(MainCoordinator.Instance)
         
-        var asViewController: UIViewController {
+        var naviUnit: NaviUnit {
             switch self {
             case .main(let coordinator):
                 let controller = coordinator.view
@@ -24,7 +24,7 @@ enum AppCoordinator {
         case run
     }
     
-    static func make(view: Instance.View) -> Instance {
+    static func make(view: WindowCoordinated) -> Instance {
         return Instance(view: view, initial: .run) { action, dispatch, state in
             switch action {
             case .run:

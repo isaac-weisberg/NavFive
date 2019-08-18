@@ -4,7 +4,7 @@ import NavFive
 enum MainCoordinator {
     typealias Instance = NavitrollerCoordinator<NavigationState, Action>
     
-    struct NavigationState: NavitrollerState {
+    struct NavigationState: ArrayControllerConvertible {
         enum Step {
             case main(MainViewController)
         }

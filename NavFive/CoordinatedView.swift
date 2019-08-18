@@ -1,12 +1,12 @@
 import RxSwift
 import RxCocoa
 
-public protocol CoordinatedView {
-    associatedtype NavigationState
+public protocol ViewMetaState {
     
-    var coordinationState: BehaviorRelay<ViewState<NavigationState>> { get }
 }
 
-internal extension CoordinatedView {
+protocol CoordinatedView {
+    associatedtype State: ViewMetaState
     
+    var coordinationState: BehaviorRelay<State?> { get }
 }
