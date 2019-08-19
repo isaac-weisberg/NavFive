@@ -4,16 +4,13 @@ import NavFive
 enum AppCoordinator {
     typealias Instance = WindowCoordinator<State, Action>
     
-    enum State: WindowNaviState {
+    enum State: NaviUnitConvertible {
         case main(MainCoordinator.Instance)
         
         var naviUnit: NaviUnit {
             switch self {
             case .main(let coordinator):
                 let controller = coordinator.view
-                coordinator.state
-                    .drive()
-                    .disposed(by: controller.naviSposeBag)
                 
                 return controller
             }
@@ -28,8 +25,14 @@ enum AppCoordinator {
         return Instance(view: view, initial: .run) { action, dispatch, state in
             switch action {
             case .run:
-                let navitroller = MainCoordinator.Instance.View()
+                let navitroller = NavitrollerCoordinated()
                 let coordinator = MainCoordinator.make(view: navitroller)
+                
+                coordinator.start
+                    .asObservable()
+                    .bind(to: dispatch)
+                    .disposed(by: navitroller.naviSposeBag)
+                
                 return .main(coordinator)
             }
         }

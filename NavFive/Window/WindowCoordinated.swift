@@ -2,12 +2,10 @@ import RxSwift
 import RxCocoa
 import UIKit
 
-public class WindowCoordinated: UIWindow, CoordinatedView {
-    typealias State = NaviUnitConvertible
-    
+public class WindowCoordinated: UIWindow {
     public let naviSposeBag = DisposeBag()
     
-    let coordinationState = BehaviorRelay<State?>(value: nil)
+    let coordinationState = BehaviorRelay<NaviUnitConvertible?>(value: nil)
     
     public override init(frame: CGRect) {
         super.init(frame: frame)

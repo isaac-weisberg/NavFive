@@ -11,7 +11,7 @@ import UIKit
         let window = WindowCoordinated(frame: UIScreen.main.bounds)
         mainCoordinator = AppCoordinator.make(view: window)
         mainSubscription = mainCoordinator
-            .state
+            .start
             .drive()
         
         return true

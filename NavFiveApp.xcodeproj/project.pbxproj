@@ -27,11 +27,8 @@
 		FA3DA57723082F5100C7CF48 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA61357D2306C1BA00C543A6 /* RxRelay.framework */; };
 		FA3DA57823082F5100C7CF48 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA61357D2306C1BA00C543A6 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA61356C2306A63900C543A6 /* NavitrollerCoordinated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61356B2306A63900C543A6 /* NavitrollerCoordinated.swift */; };
-		FA61356E2306A75700C543A6 /* ArrayControllerConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61356D2306A75700C543A6 /* ArrayControllerConvertible.swift */; };
 		FA6135702306AA2300C543A6 /* NavitrollerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61356F2306AA2300C543A6 /* NavitrollerCoordinator.swift */; };
-		FA6135782306B8E900C543A6 /* CoordinatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6135772306B8E900C543A6 /* CoordinatedView.swift */; };
 		FA61357F2306C1BA00C543A6 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA61357D2306C1BA00C543A6 /* RxRelay.framework */; };
-		FA95A52B2309942700859FBC /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA95A52A2309942700859FBC /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,11 +75,8 @@
 		FA2F06512305624A005159A9 /* WindowCoordinated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowCoordinated.swift; sourceTree = "<group>"; };
 		FA3DA573230821F200C7CF48 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		FA61356B2306A63900C543A6 /* NavitrollerCoordinated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavitrollerCoordinated.swift; sourceTree = "<group>"; };
-		FA61356D2306A75700C543A6 /* ArrayControllerConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayControllerConvertible.swift; sourceTree = "<group>"; };
 		FA61356F2306AA2300C543A6 /* NavitrollerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavitrollerCoordinator.swift; sourceTree = "<group>"; };
-		FA6135772306B8E900C543A6 /* CoordinatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatedView.swift; sourceTree = "<group>"; };
 		FA61357D2306C1BA00C543A6 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
-		FA95A52A2309942700859FBC /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,8 +138,6 @@
 				FA61356A2306A61B00C543A6 /* NavigationController */,
 				FA6135672306A5A400C543A6 /* Window */,
 				FA2F0633230555D4005159A9 /* NaviUnit.swift */,
-				FA6135772306B8E900C543A6 /* CoordinatedView.swift */,
-				FA95A52A2309942700859FBC /* Coordinator.swift */,
 				FA2F062723055528005159A9 /* Info.plist */,
 			);
 			path = NavFive;
@@ -211,7 +203,6 @@
 			isa = PBXGroup;
 			children = (
 				FA61356F2306AA2300C543A6 /* NavitrollerCoordinator.swift */,
-				FA61356D2306A75700C543A6 /* ArrayControllerConvertible.swift */,
 				FA61356B2306A63900C543A6 /* NavitrollerCoordinated.swift */,
 			);
 			path = NavigationController;
@@ -340,14 +331,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA61356E2306A75700C543A6 /* ArrayControllerConvertible.swift in Sources */,
 				FA6135702306AA2300C543A6 /* NavitrollerCoordinator.swift in Sources */,
 				FA61356C2306A63900C543A6 /* NavitrollerCoordinated.swift in Sources */,
 				FA2F06522305624A005159A9 /* WindowCoordinated.swift in Sources */,
 				FA2F063223055569005159A9 /* WindowCoordinator.swift in Sources */,
 				FA2F0634230555D4005159A9 /* NaviUnit.swift in Sources */,
-				FA6135782306B8E900C543A6 /* CoordinatedView.swift in Sources */,
-				FA95A52B2309942700859FBC /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,6 +16,10 @@ extension NavitrollerCoordinator: NaviUnit {
     }
 }
 
-public protocol NaviUnitConvertible: ViewMetaState {
+public protocol NaviUnitConvertible {
     var naviUnit: NaviUnit { get }
+}
+
+public protocol NaviUnitArrayConvertible {
+    var naviUnits: [NaviUnit] { get }
 }

@@ -3,14 +3,18 @@ import RxSwift
 import RxCocoa
 
 public struct WindowCoordinator<NaviState: NaviUnitConvertible, Action> {
-    public struct State {
-        public let state: NaviState?
-        public let lastAction: Action
+    struct State {
+        let state: NaviState?
+        let lastAction: Action
     }
     
     public let view: WindowCoordinated
-    public let actionPublish: PublishRelay<Action>
-    public let start: Driver<Void>
+    let actionPublish: PublishRelay<Action>
+    public let start: Driver<Action>
+    
+    func publishImperativeAction(_ action: Action) {
+        actionPublish.accept(action)
+    }
     
     public init(view: WindowCoordinated, initial action: Action, _ converter: @escaping (Action, PublishRelay<Action>, NaviState?) -> NaviState) {
         self.view = view
@@ -42,7 +46,9 @@ public struct WindowCoordinator<NaviState: NaviUnitConvertible, Action> {
             .do(onNext: { state in
                 view.coordinationState.accept(state.state)
             })
-            .map { _ in () }
+            .map { state in
+                state.lastAction
+            }
     }
 }
 

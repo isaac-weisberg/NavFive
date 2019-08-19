@@ -2,10 +2,10 @@ import RxSwift
 import RxCocoa
 import UIKit
 
-public class NavitrollerCoordinated: UINavigationController, CoordinatedView {
+public class NavitrollerCoordinated: UINavigationController {
     public let naviSposeBag = DisposeBag()
     
-    public let coordinationState = BehaviorRelay<ArrayControllerConvertible?>(value: nil)
+    let coordinationState = BehaviorRelay<[NaviUnit]?>(value: nil)
     
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -32,7 +32,9 @@ private extension NavitrollerCoordinated {
     func setup() {
         coordinationState
             .bind(onNext: {[unowned self] state in
-                let controllers = state?.asViewControllers ?? []
+                let controllers = state?.map { unit in
+                    unit.asViewController
+                } ?? []
                 self.setViewControllers(controllers, animated: true)
             })
             .disposed(by: naviSposeBag)

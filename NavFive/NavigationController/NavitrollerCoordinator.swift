@@ -2,44 +2,53 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-public struct NavitrollerCoordinator<NavigationState: ArrayControllerConvertible, Action> {
-    public typealias View = NavitrollerCoordinated
-    
+public struct NavitrollerCoordinator<NaviState: NaviUnitArrayConvertible, Action> {
     struct State {
-        let viewState: View.State?
+        let state: NaviState?
         let lastAction: Action
     }
     
-    public let view: View
+    public let view: NavitrollerCoordinated
+    let actionPublish: PublishRelay<Action>
+    public let start: Driver<Action>
     
-    public let actionPublish: PublishRelay<Action>
+    func publishImperativeAction(_ action: Action) {
+        actionPublish.accept(action)
+    }
     
-    public let start: Driver<Void>
-    
-    public init(view: View, initial action: Action, _ converter: @escaping (Action, PublishRelay<Action>, View.State?) -> View.State) {
+    public init(view: NavitrollerCoordinated, initial action: Action, _ converter: @escaping (Action, PublishRelay<Action>, NaviState?) -> NaviState) {
         self.view = view
         let actionPublish = PublishRelay<Action>()
         self.actionPublish = actionPublish
+        
+        let firstNaviState = converter(action, actionPublish, nil)
+        let firstState = State(state: firstNaviState, lastAction: action)
+        let stateRelay = BehaviorRelay<State>(value: firstState)
+        
         let navStateFlow = actionPublish
-            .startWith(action)
-            .withLatestFrom(view.coordinationState.asDriver()) { ($0, $1) }
+            .withLatestFrom(stateRelay.asDriver()) { ($0, $1.state) }
             .map { action, state in
-                State(viewState: converter(action, actionPublish, state), lastAction: action)
-        }
+                State(state: converter(action, actionPublish, state), lastAction: action)
+            }
         
         let ending = navStateFlow
             .takeLast(1)
             .map { state in
-                State(viewState: nil, lastAction: state.lastAction)
-        }
+                State(state: nil, lastAction: state.lastAction)
+            }
         
         start = navStateFlow
             .concat(ending)
+            .do(onNext: { state in
+                stateRelay.accept(state)
+            })
             .asDriver(onErrorRecover: { _ in .never() })
             .do(onNext: { state in
-                view.coordinationState.accept(state.viewState)
+                view.coordinationState.accept(state.state?.naviUnits)
             })
-            .asDriver()
+            .map { state in
+                state.lastAction
+            }
     }
 }
 

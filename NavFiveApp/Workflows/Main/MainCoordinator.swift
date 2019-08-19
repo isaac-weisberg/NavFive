@@ -4,14 +4,14 @@ import NavFive
 enum MainCoordinator {
     typealias Instance = NavitrollerCoordinator<NavigationState, Action>
     
-    struct NavigationState: ArrayControllerConvertible {
+    struct NavigationState: NaviUnitArrayConvertible {
         enum Step {
             case main(MainViewController)
         }
         
         let steps: [Step]
         
-        var asViewControllers: [UIViewController] {
+        var naviUnits: [NaviUnit] {
             return steps.map { step in
                 switch step {
                 case .main(let controller):
@@ -21,14 +21,12 @@ enum MainCoordinator {
         }
     }
     
-    enum Action {
-        case showMain
-    }
+    typealias Action = AppCoordinator.Action
     
-    static func make(view: Instance.View) -> Instance {
-        return Instance(view: view, initial: .showMain) { action, dispatch, state in
+    static func make(view: NavitrollerCoordinated) -> Instance {
+        return Instance(view: view, initial: .run) { action, dispatch, state in
             switch action {
-            case .showMain:
+            case .run:
                 let controller = MainViewController()
                 return NavigationState(steps: [ .main(controller) ])
             }
