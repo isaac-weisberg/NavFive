@@ -2,28 +2,28 @@ import UIKit
 import NavFive
 
 enum MainCoordinator {
-    typealias Instance = NavitrollerCoordinator<NavigationState, Action>
+    typealias Instance = SequetialCoordinator<NavigationState, Action>
     
-    struct NavigationState: NaviUnitArrayConvertible {
+    struct NavigationState: NaviUnitConvertible {
         enum Step {
             case main(MainViewController)
         }
         
         let steps: [Step]
         
-        var naviUnits: [NaviUnit] {
-            return steps.map { step in
+        var naviUnit: SequentialNaviUnit {
+            return .many(steps.map { step in
                 switch step {
                 case .main(let controller):
-                    return controller
+                    return .one(controller)
                 }
-            }
+            })
         }
     }
     
     typealias Action = AppCoordinator.Action
     
-    static func make(view: NavitrollerCoordinated) -> Instance {
+    static func make(view: SequentialNavitroller) -> Instance {
         return Instance(view: view, initial: .run) { action, dispatch, state in
             switch action {
             case .run:

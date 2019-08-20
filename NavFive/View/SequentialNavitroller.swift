@@ -2,14 +2,10 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-public protocol SequentialViewProtocol {
-    var state: BehaviorRelay<[UIViewController]> { get }
-}
-
-class SequentialNavitroller: UINavigationController, SequentialViewProtocol {
-    let naviSposeBag = DisposeBag()
+public class SequentialNavitroller: UINavigationController, SequentialViewProtocol {
+    public let naviSposeBag = DisposeBag()
     
-    let state = BehaviorRelay<[UIViewController]>(value: [])
+    public let state = BehaviorRelay<[UIViewController]>(value: [])
     
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)

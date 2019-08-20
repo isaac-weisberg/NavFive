@@ -2,17 +2,15 @@ import UIKit
 import NavFive
 
 enum AppCoordinator {
-    typealias Instance = WindowCoordinator<State, Action>
+    typealias Instance = SequetialCoordinator<State, Action>
     
     enum State: NaviUnitConvertible {
         case main(MainCoordinator.Instance)
         
-        var naviUnit: NaviUnit {
+        var naviUnit: SequentialNaviUnit {
             switch self {
             case .main(let coordinator):
-                let controller = coordinator.view
-                
-                return controller
+                return .child(coordinator)
             }
         }
     }
@@ -21,11 +19,11 @@ enum AppCoordinator {
         case run
     }
     
-    static func make(view: WindowCoordinated) -> Instance {
+    static func make(view: SequentialWindow) -> Instance {
         return Instance(view: view, initial: .run) { action, dispatch, state in
             switch action {
             case .run:
-                let navitroller = NavitrollerCoordinated()
+                let navitroller = SequentialNavitroller()
                 let coordinator = MainCoordinator.make(view: navitroller)
                 
                 coordinator.start

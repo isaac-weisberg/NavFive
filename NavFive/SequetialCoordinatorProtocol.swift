@@ -11,7 +11,7 @@ extension SequetialCoordinator: SequentialCoordinatorProtocol {
         return stateRelay
             .asDriver()
             .flatMapLatest { state in
-                state.state.naviUnit.asViewControllers ?? .just([])
+                state?.state.naviUnit.asViewControllers ?? .never()
             }
     }
 }

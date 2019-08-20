@@ -8,7 +8,8 @@ import UIKit
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
-        let window = WindowCoordinated(frame: UIScreen.main.bounds)
+        let window = SequentialWindow(frame: UIScreen.main.bounds)
+        window.makeKeyAndVisible()
         mainCoordinator = AppCoordinator.make(view: window)
         mainSubscription = mainCoordinator
             .start
