@@ -3,6 +3,10 @@ import RxSwift
 import RxCocoa
 
 public class SequentialNavitroller: UINavigationController, SequentialViewProtocol {
+    public var expressedAsViewController: Driver<UIViewController> {
+        return .just(self)
+    }
+    
     public let naviSposeBag = DisposeBag()
     
     public let state = BehaviorRelay<[UIViewController]>(value: [])

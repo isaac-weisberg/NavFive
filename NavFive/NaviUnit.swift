@@ -4,7 +4,7 @@ import RxCocoa
 
 public enum SequentialNaviUnit {
     case one(UIViewController)
-    case child(SequentialCoordinatorProtocol)
+    case child(SequentialViewProtocol)
     case many([SequentialNaviUnit])
 }
 
@@ -17,8 +17,11 @@ extension SequentialNaviUnit {
         switch self {
         case .one(let controller):
             return .just([controller])
-        case .child(let coordinator):
-            return coordinator.controllers
+        case .child(let view):
+            return view.expressedAsViewController
+                .map { controller in
+                    [controller]
+                }
         case .many(let units):
             let drivers = units.map { unit in
                 unit.asViewControllers

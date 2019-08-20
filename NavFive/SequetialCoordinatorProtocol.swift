@@ -2,7 +2,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-public protocol SequentialCoordinatorProtocol {
+protocol SequentialCoordinatorProtocol {
     var controllers: Driver<[UIViewController]> { get }
 }
 

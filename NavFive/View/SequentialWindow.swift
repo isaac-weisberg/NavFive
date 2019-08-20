@@ -7,12 +7,32 @@ public class SequentialWindow: UIWindow, SequentialViewProtocol {
     
     public let state = BehaviorRelay<[UIViewController]>(value: [])
     
+    public let expressedAsViewController: Driver<UIViewController>
+    
     public override init(frame: CGRect) {
+        expressedAsViewController = state
+            .asDriver()
+            .flatMapLatest { controllers in
+                if let last = controllers.last {
+                    return .just(last)
+                }
+                return .never()
+            }
+        
         super.init(frame: frame)
         setup()
     }
     
     public required init?(coder aDecoder: NSCoder) {
+        expressedAsViewController = state
+            .asDriver()
+            .flatMapLatest { controllers in
+                if let last = controllers.last {
+                    return .just(last)
+                }
+                return .never()
+            }
+        
         super.init(coder: aDecoder)
         setup()
     }

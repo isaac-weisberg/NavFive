@@ -10,7 +10,7 @@ enum AppCoordinator {
         var naviUnit: SequentialNaviUnit {
             switch self {
             case .main(let coordinator):
-                return .child(coordinator)
+                return .child(coordinator.view)
             }
         }
     }
