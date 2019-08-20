@@ -29,6 +29,9 @@
 		FA61356C2306A63900C543A6 /* NavitrollerCoordinated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61356B2306A63900C543A6 /* NavitrollerCoordinated.swift */; };
 		FA6135702306AA2300C543A6 /* NavitrollerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61356F2306AA2300C543A6 /* NavitrollerCoordinator.swift */; };
 		FA61357F2306C1BA00C543A6 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA61357D2306C1BA00C543A6 /* RxRelay.framework */; };
+		FA833944230C518400344F3D /* SequentialCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA833943230C518400344F3D /* SequentialCoordinator.swift */; };
+		FA833946230C51C000344F3D /* SequentialViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA833945230C51C000344F3D /* SequentialViewProtocol.swift */; };
+		FA833948230C548200344F3D /* SequetialCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA833947230C548200344F3D /* SequetialCoordinatorProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,9 @@
 		FA61356B2306A63900C543A6 /* NavitrollerCoordinated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavitrollerCoordinated.swift; sourceTree = "<group>"; };
 		FA61356F2306AA2300C543A6 /* NavitrollerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavitrollerCoordinator.swift; sourceTree = "<group>"; };
 		FA61357D2306C1BA00C543A6 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
+		FA833943230C518400344F3D /* SequentialCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequentialCoordinator.swift; sourceTree = "<group>"; };
+		FA833945230C51C000344F3D /* SequentialViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequentialViewProtocol.swift; sourceTree = "<group>"; };
+		FA833947230C548200344F3D /* SequetialCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequetialCoordinatorProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +141,9 @@
 		FA2F062523055528005159A9 /* NavFive */ = {
 			isa = PBXGroup;
 			children = (
+				FA833945230C51C000344F3D /* SequentialViewProtocol.swift */,
+				FA833947230C548200344F3D /* SequetialCoordinatorProtocol.swift */,
+				FA833943230C518400344F3D /* SequentialCoordinator.swift */,
 				FA61356A2306A61B00C543A6 /* NavigationController */,
 				FA6135672306A5A400C543A6 /* Window */,
 				FA2F0633230555D4005159A9 /* NaviUnit.swift */,
@@ -331,11 +340,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA833948230C548200344F3D /* SequetialCoordinatorProtocol.swift in Sources */,
 				FA6135702306AA2300C543A6 /* NavitrollerCoordinator.swift in Sources */,
 				FA61356C2306A63900C543A6 /* NavitrollerCoordinated.swift in Sources */,
 				FA2F06522305624A005159A9 /* WindowCoordinated.swift in Sources */,
 				FA2F063223055569005159A9 /* WindowCoordinator.swift in Sources */,
 				FA2F0634230555D4005159A9 /* NaviUnit.swift in Sources */,
+				FA833944230C518400344F3D /* SequentialCoordinator.swift in Sources */,
+				FA833946230C51C000344F3D /* SequentialViewProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
