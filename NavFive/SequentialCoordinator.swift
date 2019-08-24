@@ -30,7 +30,8 @@ public struct SequetialCoordinator<NaviState: NaviUnitConvertible, Action> {
             .startWith(action)
             .withLatestFrom(stateRelay.asDriver()) { ($0, $1) }
             .map { action, state in
-                State(state: converter(action, actionPublish, state?.state), lastAction: action)
+                let newNaviState = converter(action, actionPublish, state?.state)
+                return State(state: newNaviState, lastAction: action)
             }
             .do(onNext: { state in
                 stateRelay.accept(state)

@@ -6,18 +6,20 @@ enum MainCoordinator {
     
     struct NavigationState: NaviUnitConvertible {
         enum Step {
-            case main(MainViewController)
+            case main(UIViewController)
         }
         
         let steps: [Step]
         
         var naviUnit: SequentialNaviUnit {
-            return .many(steps.map { step in
+            let units: [SequentialNaviUnit] = steps.map { step in
                 switch step {
                 case .main(let controller):
                     return .one(controller)
                 }
-            })
+            }
+            
+            return .many(units)
         }
     }
     
@@ -27,7 +29,8 @@ enum MainCoordinator {
         return Instance(view: view, initial: .run) { action, dispatch, state in
             switch action {
             case .run:
-                let controller = MainViewController()
+                let controller = UIViewController(nibName: nil, bundle: nil)
+                controller.view.backgroundColor = .green
                 return NavigationState(steps: [ .main(controller) ])
             }
         }

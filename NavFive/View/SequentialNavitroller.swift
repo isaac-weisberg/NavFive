@@ -3,16 +3,12 @@ import RxSwift
 import RxCocoa
 
 public class SequentialNavitroller: UINavigationController, SequentialViewProtocol {
-    public var expressedAsViewController: Driver<UIViewController> {
-        return .just(self)
-    }
-    
     public let naviSposeBag = DisposeBag()
     
-    public let state = BehaviorRelay<[UIViewController]>(value: [])
+    public let state = PublishRelay<[UIViewController]>()
     
-    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    public init() {
+        super.init(nibName: nil, bundle: nil)
         setup()
     }
     
@@ -21,14 +17,8 @@ public class SequentialNavitroller: UINavigationController, SequentialViewProtoc
         setup()
     }
     
-    public override init(navigationBarClass: AnyClass?, toolbarClass: AnyClass?) {
-        super.init(navigationBarClass: navigationBarClass, toolbarClass: toolbarClass)
-        setup()
-    }
-    
-    public override init(rootViewController: UIViewController) {
-        super.init(rootViewController: rootViewController)
-        setup()
+    public var expressedAsViewController: Driver<UIViewController> {
+        return .just(self)
     }
 }
 
@@ -36,7 +26,7 @@ private extension SequentialNavitroller {
     func setup() {
         state
             .bind(onNext: {[unowned self] controllers in
-                self.setViewControllers(controllers, animated: true)
+                self.setViewControllers(controllers, animated: false)
             })
             .disposed(by: naviSposeBag)
     }
