@@ -6,7 +6,7 @@ enum MainCoordinator {
     
     struct NavigationState: NaviUnitConvertible {
         enum Step {
-            case main(UIViewController)
+            case main(MainViewController)
         }
         
         let steps: [Step]
@@ -29,8 +29,8 @@ enum MainCoordinator {
         return Instance(view: view, initial: .run) { action, dispatch, state in
             switch action {
             case .run:
-                let controller = UIViewController(nibName: nil, bundle: nil)
-                controller.view.backgroundColor = .green
+                let viewModel = MainViewModel(gameListViewModel: MainGamesTableViewModel())
+                let controller = MainViewController.make(viewModel: viewModel)
                 return NavigationState(steps: [ .main(controller) ])
             }
         }
