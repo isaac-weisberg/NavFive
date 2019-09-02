@@ -1,15 +1,22 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 class MainGamesTableView: XibModularView {
-    let permaBag = DisposeBag()
+    typealias Section = SectionModel<Void, GameCellViewModelProtocol>
+    typealias DataSource = RxTableViewSectionedReloadDataSource<Section>
+    
     var disposeBag: DisposeBag!
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var loadingView: LoadingView!
     
-    let dataset = BehaviorRelay<[GameCellViewModelProtocol]>(value: [])
+    let dataSource = DataSource(configureCell: { ds, tv, indexPath, item in
+        let cell: MainGamesTableCell = tv.dequeueCell(at: indexPath)
+        cell.apply(viewModel: item)
+        return cell
+    })
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,13 +32,26 @@ class MainGamesTableView: XibModularView {
         disposeBag = DisposeBag()
         
         viewModel.state
+            .map { state in
+                switch state {
+                case .loaded:
+                    return false
+                }
+            }
+            .drive(loadingView.rx.isShown)
+            .disposed(by: disposeBag)
+        
+        viewModel.state
             .flatMapLatest { state -> Driver<[GameCellViewModelProtocol]> in
                 switch state {
                 case .loaded(let items):
                     return .just(items)
                 }
             }
-            .drive(dataset)
+            .map { items in
+                [ Section(model: (), items: items) ]
+            }
+            .drive(tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
     }
 }
@@ -39,32 +59,6 @@ class MainGamesTableView: XibModularView {
 private extension MainGamesTableView {
     func setup() {
         tableView.separatorStyle = .none
-        tableView.dataSource = self
-        
         tableView.registerCell(cell: MainGamesTableCell.self)
-        
-        dataset
-            .asDriver()
-            .drive(onNext: {[unowned self] cells in
-                self.tableView.reloadData()
-            })
-            .disposed(by: permaBag)
-    }
-}
-
-extension MainGamesTableView: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = dataset.value[indexPath.row]
-        let cell: MainGamesTableCell = tableView.dequeueCell(at: indexPath)
-        cell.apply(viewModel: item)
-        return cell
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataset.value.count
     }
 }

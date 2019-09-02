@@ -5,6 +5,6 @@ target 'NavFive' do
     pod 'RxCocoa', '~> 5.0.0'
 
     target 'NavFiveApp' do 
-
+        pod 'RxDataSources'
     end
 end

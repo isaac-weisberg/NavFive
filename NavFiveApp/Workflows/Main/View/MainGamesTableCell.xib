@@ -16,18 +16,18 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duo-zf-OP6">
-                    <rect key="frame" x="8" y="8" width="265" height="74"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="16" y="16" width="249" height="58"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="duo-zf-OP6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="0f4-rF-kFb"/>
-                <constraint firstItem="duo-zf-OP6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="7tS-4k-dRO"/>
-                <constraint firstAttribute="trailing" secondItem="duo-zf-OP6" secondAttribute="trailing" constant="8" id="J2D-T6-vUw"/>
-                <constraint firstAttribute="bottom" secondItem="duo-zf-OP6" secondAttribute="bottom" constant="8" id="MPU-4Q-dnc"/>
+                <constraint firstItem="duo-zf-OP6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="0f4-rF-kFb"/>
+                <constraint firstItem="duo-zf-OP6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="7tS-4k-dRO"/>
+                <constraint firstAttribute="trailing" secondItem="duo-zf-OP6" secondAttribute="trailing" constant="16" id="J2D-T6-vUw"/>
+                <constraint firstAttribute="bottom" secondItem="duo-zf-OP6" secondAttribute="bottom" constant="16" id="MPU-4Q-dnc"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

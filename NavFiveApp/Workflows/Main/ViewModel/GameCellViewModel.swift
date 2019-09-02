@@ -1,12 +1,19 @@
+import RxSwift
+import RxCocoa
+
 protocol GameCellViewModelProtocol {
     var title: String { get }
 }
 
 struct GameCellViewModel {
     let title: String
+    let id: String
     
-    init(title: String) {
-        self.title = title
+    let tap = PublishRelay<Void>()
+    
+    init(model: GameModel) {
+        self.title = model.title
+        self.id = model.id
     }
 }
 

@@ -29,8 +29,12 @@ enum MainCoordinator {
         return Instance(view: view, initial: .run) { action, dispatch, state in
             switch action {
             case .run:
-                let viewModel = MainViewModel(gameListViewModel: MainGamesTableViewModel())
+                let interactor = GamesListInteractor()
+                let viewModel = MainViewModel(interactor: interactor)
                 let controller = MainViewController.make(viewModel: viewModel)
+                
+                interactor
+                
                 return NavigationState(steps: [ .main(controller) ])
             }
         }
