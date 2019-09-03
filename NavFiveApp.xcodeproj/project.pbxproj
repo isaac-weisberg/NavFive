@@ -27,6 +27,7 @@
 		FAA0928A231D5365008B0BAB /* GamesListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA09289231D5365008B0BAB /* GamesListInteractor.swift */; };
 		FAA0928D231D5374008B0BAB /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0928C231D5374008B0BAB /* GameModel.swift */; };
 		FAAB340623129A9A00E3B02E /* NavFive.podspec in Resources */ = {isa = PBXBuildFile; fileRef = FAAB340523129A9A00E3B02E /* NavFive.podspec */; };
+		FABBA5B9231EBF9A00B3494F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FABBA5B8231EBF9A00B3494F /* README.md */; };
 		FAE6B7C623115E50009C7828 /* MainGamesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6B7C523115E50009C7828 /* MainGamesTableView.swift */; };
 		FAE6B7C923115FE0009C7828 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE6B7C823115FE0009C7828 /* MainViewController.xib */; };
 		FAE6B7CC23116368009C7828 /* XibModularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6B7CB23116368009C7828 /* XibModularView.swift */; };
@@ -95,6 +96,7 @@
 		FAA09289231D5365008B0BAB /* GamesListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListInteractor.swift; sourceTree = "<group>"; };
 		FAA0928C231D5374008B0BAB /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		FAAB340523129A9A00E3B02E /* NavFive.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NavFive.podspec; sourceTree = "<group>"; };
+		FABBA5B8231EBF9A00B3494F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FAE6B7C523115E50009C7828 /* MainGamesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGamesTableView.swift; sourceTree = "<group>"; };
 		FAE6B7C823115FE0009C7828 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		FAE6B7CB23116368009C7828 /* XibModularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibModularView.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 		FA2F060123055495005159A9 = {
 			isa = PBXGroup;
 			children = (
+				FABBA5B8231EBF9A00B3494F /* README.md */,
 				FAAB340523129A9A00E3B02E /* NavFive.podspec */,
 				FA2F060C23055495005159A9 /* NavFiveApp */,
 				FA2F062523055528005159A9 /* NavFive */,
@@ -406,6 +409,7 @@
 				FAE6B7C923115FE0009C7828 /* MainViewController.xib in Resources */,
 				FAE6B7D623116822009C7828 /* MainGamesTableCell.xib in Resources */,
 				FA2F061523055497005159A9 /* Assets.xcassets in Resources */,
+				FABBA5B9231EBF9A00B3494F /* README.md in Resources */,
 				FAE6B7D22311655E009C7828 /* LoadingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
