@@ -7,4 +7,8 @@ target 'NavFive' do
     target 'NavFiveApp' do 
         pod 'RxDataSources'
     end
+
+    target 'Silly' do
+        
+    end
 end

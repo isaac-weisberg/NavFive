@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2D0DE2BE2C6DAF913D9FC8BF /* libPods-NavFive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D20B3FBD6C270DCF8E4D8C4B /* libPods-NavFive.a */; };
 		38A85B0BA8E98F5340DE3FB0 /* libPods-NavFive-NavFiveApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9500206E084A42D5146B87A /* libPods-NavFive-NavFiveApp.a */; };
+		9BEA798F677680487CDC1FB9 /* libPods-NavFive-Silly.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 055B3CEBD41AE7588F8FA963 /* libPods-NavFive-Silly.a */; };
 		FA2F060E23055495005159A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F060D23055495005159A9 /* AppDelegate.swift */; };
 		FA2F061523055497005159A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA2F061423055497005159A9 /* Assets.xcassets */; };
 		FA2F061823055497005159A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2F061623055497005159A9 /* LaunchScreen.storyboard */; };
@@ -27,7 +28,12 @@
 		FAA0928A231D5365008B0BAB /* GamesListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA09289231D5365008B0BAB /* GamesListInteractor.swift */; };
 		FAA0928D231D5374008B0BAB /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0928C231D5374008B0BAB /* GameModel.swift */; };
 		FAAB340623129A9A00E3B02E /* NavFive.podspec in Resources */ = {isa = PBXBuildFile; fileRef = FAAB340523129A9A00E3B02E /* NavFive.podspec */; };
-		FABBA5B9231EBF9A00B3494F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FABBA5B8231EBF9A00B3494F /* README.md */; };
+		FABBA5C1231ECA3E00B3494F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBA5C0231ECA3E00B3494F /* AppDelegate.swift */; };
+		FABBA5C8231ECA4000B3494F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FABBA5C7231ECA4000B3494F /* Assets.xcassets */; };
+		FABBA5CB231ECA4000B3494F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABBA5C9231ECA4000B3494F /* LaunchScreen.storyboard */; };
+		FABBA5D1231ECB1E00B3494F /* NavFive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2F062423055528005159A9 /* NavFive.framework */; };
+		FABBA5D2231ECB1E00B3494F /* NavFive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA2F062423055528005159A9 /* NavFive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FABBA5D8231ECDDA00B3494F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBA5D7231ECDDA00B3494F /* MainCoordinator.swift */; };
 		FAE6B7C623115E50009C7828 /* MainGamesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6B7C523115E50009C7828 /* MainGamesTableView.swift */; };
 		FAE6B7C923115FE0009C7828 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE6B7C823115FE0009C7828 /* MainViewController.xib */; };
 		FAE6B7CC23116368009C7828 /* XibModularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6B7CB23116368009C7828 /* XibModularView.swift */; };
@@ -50,6 +56,13 @@
 			remoteGlobalIDString = FA2F062323055528005159A9;
 			remoteInfo = NavFive;
 		};
+		FABBA5D3231ECB1E00B3494F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA2F060223055495005159A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA2F062323055528005159A9;
+			remoteInfo = NavFive;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -64,10 +77,24 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FABBA5D5231ECB1E00B3494F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FABBA5D2231ECB1E00B3494F /* NavFive.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		055B3CEBD41AE7588F8FA963 /* libPods-NavFive-Silly.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NavFive-Silly.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1996BE4DFEEFAD61F36EF86F /* Pods-NavFive-Silly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NavFive-Silly.debug.xcconfig"; path = "Target Support Files/Pods-NavFive-Silly/Pods-NavFive-Silly.debug.xcconfig"; sourceTree = "<group>"; };
 		1E5F8FFC347105EEB2E3BC88 /* Pods-NavFive-NavFiveApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NavFive-NavFiveApp.release.xcconfig"; path = "Target Support Files/Pods-NavFive-NavFiveApp/Pods-NavFive-NavFiveApp.release.xcconfig"; sourceTree = "<group>"; };
+		3E5D2E420E3328E0CDE1198F /* Pods-NavFive-Silly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NavFive-Silly.release.xcconfig"; path = "Target Support Files/Pods-NavFive-Silly/Pods-NavFive-Silly.release.xcconfig"; sourceTree = "<group>"; };
 		549B0E66C8F18BD2BA818FB6 /* Pods-NavFive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NavFive.release.xcconfig"; path = "Target Support Files/Pods-NavFive/Pods-NavFive.release.xcconfig"; sourceTree = "<group>"; };
 		7ADC3748E0F6EA6A767CCA7D /* Pods-NavFive-NavFiveApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NavFive-NavFiveApp.debug.xcconfig"; path = "Target Support Files/Pods-NavFive-NavFiveApp/Pods-NavFive-NavFiveApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C064F6CA40F7215450609F69 /* Pods-NavFive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NavFive.debug.xcconfig"; path = "Target Support Files/Pods-NavFive/Pods-NavFive.debug.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +124,13 @@
 		FAA0928C231D5374008B0BAB /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		FAAB340523129A9A00E3B02E /* NavFive.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NavFive.podspec; sourceTree = "<group>"; };
 		FABBA5B8231EBF9A00B3494F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FABBA5BE231ECA3E00B3494F /* Silly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Silly.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FABBA5C0231ECA3E00B3494F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FABBA5C7231ECA4000B3494F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FABBA5CA231ECA4000B3494F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FABBA5CC231ECA4000B3494F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FABBA5D6231ECB5900B3494F /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		FABBA5D7231ECDDA00B3494F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		FAE6B7C523115E50009C7828 /* MainGamesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGamesTableView.swift; sourceTree = "<group>"; };
 		FAE6B7C823115FE0009C7828 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		FAE6B7CB23116368009C7828 /* XibModularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibModularView.swift; sourceTree = "<group>"; };
@@ -129,6 +163,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FABBA5BB231ECA3E00B3494F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FABBA5D1231ECB1E00B3494F /* NavFive.framework in Frameworks */,
+				9BEA798F677680487CDC1FB9 /* libPods-NavFive-Silly.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -139,6 +182,8 @@
 				549B0E66C8F18BD2BA818FB6 /* Pods-NavFive.release.xcconfig */,
 				7ADC3748E0F6EA6A767CCA7D /* Pods-NavFive-NavFiveApp.debug.xcconfig */,
 				1E5F8FFC347105EEB2E3BC88 /* Pods-NavFive-NavFiveApp.release.xcconfig */,
+				1996BE4DFEEFAD61F36EF86F /* Pods-NavFive-Silly.debug.xcconfig */,
+				3E5D2E420E3328E0CDE1198F /* Pods-NavFive-Silly.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -146,10 +191,12 @@
 		FA2F060123055495005159A9 = {
 			isa = PBXGroup;
 			children = (
+				FABBA5D6231ECB5900B3494F /* Podfile */,
 				FABBA5B8231EBF9A00B3494F /* README.md */,
 				FAAB340523129A9A00E3B02E /* NavFive.podspec */,
 				FA2F060C23055495005159A9 /* NavFiveApp */,
 				FA2F062523055528005159A9 /* NavFive */,
+				FABBA5BF231ECA3E00B3494F /* Silly */,
 				FA2F060B23055495005159A9 /* Products */,
 				FA2F063C23055A09005159A9 /* Frameworks */,
 				BF5339CC2F30EB530C1F875C /* Pods */,
@@ -161,6 +208,7 @@
 			children = (
 				FA2F060A23055495005159A9 /* NavFiveApp.app */,
 				FA2F062423055528005159A9 /* NavFive.framework */,
+				FABBA5BE231ECA3E00B3494F /* Silly.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -228,6 +276,7 @@
 				FA2F063D23055A09005159A9 /* RxSwift.framework */,
 				D20B3FBD6C270DCF8E4D8C4B /* libPods-NavFive.a */,
 				D9500206E084A42D5146B87A /* libPods-NavFive-NavFiveApp.a */,
+				055B3CEBD41AE7588F8FA963 /* libPods-NavFive-Silly.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -264,6 +313,18 @@
 				FAA0928C231D5374008B0BAB /* GameModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FABBA5BF231ECA3E00B3494F /* Silly */ = {
+			isa = PBXGroup;
+			children = (
+				FABBA5C0231ECA3E00B3494F /* AppDelegate.swift */,
+				FABBA5C7231ECA4000B3494F /* Assets.xcassets */,
+				FABBA5C9231ECA4000B3494F /* LaunchScreen.storyboard */,
+				FABBA5CC231ECA4000B3494F /* Info.plist */,
+				FABBA5D7231ECDDA00B3494F /* MainCoordinator.swift */,
+			);
+			path = Silly;
 			sourceTree = "<group>";
 		};
 		FAE6B7C423115E1F009C7828 /* View */ = {
@@ -360,6 +421,26 @@
 			productReference = FA2F062423055528005159A9 /* NavFive.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		FABBA5BD231ECA3E00B3494F /* Silly */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FABBA5CF231ECA4000B3494F /* Build configuration list for PBXNativeTarget "Silly" */;
+			buildPhases = (
+				A3C06E4767F2F068B59D3C5F /* [CP] Check Pods Manifest.lock */,
+				FABBA5BA231ECA3E00B3494F /* Sources */,
+				FABBA5BB231ECA3E00B3494F /* Frameworks */,
+				FABBA5BC231ECA3E00B3494F /* Resources */,
+				FABBA5D5231ECB1E00B3494F /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FABBA5D4231ECB1E00B3494F /* PBXTargetDependency */,
+			);
+			name = Silly;
+			productName = Silly;
+			productReference = FABBA5BE231ECA3E00B3494F /* Silly.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -377,6 +458,9 @@
 						CreatedOnToolsVersion = 10.2.1;
 						LastSwiftMigration = 1020;
 					};
+					FABBA5BD231ECA3E00B3494F = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
 				};
 			};
 			buildConfigurationList = FA2F060523055495005159A9 /* Build configuration list for PBXProject "NavFiveApp" */;
@@ -392,6 +476,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				FABBA5BD231ECA3E00B3494F /* Silly */,
 				FA2F060923055495005159A9 /* NavFiveApp */,
 				FA2F062323055528005159A9 /* NavFive */,
 			);
@@ -409,7 +494,6 @@
 				FAE6B7C923115FE0009C7828 /* MainViewController.xib in Resources */,
 				FAE6B7D623116822009C7828 /* MainGamesTableCell.xib in Resources */,
 				FA2F061523055497005159A9 /* Assets.xcassets in Resources */,
-				FABBA5B9231EBF9A00B3494F /* README.md in Resources */,
 				FAE6B7D22311655E009C7828 /* LoadingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +502,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FABBA5BC231ECA3E00B3494F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FABBA5CB231ECA4000B3494F /* LaunchScreen.storyboard in Resources */,
+				FABBA5C8231ECA4000B3494F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +561,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A3C06E4767F2F068B59D3C5F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NavFive-Silly-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -506,6 +621,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FABBA5BA231ECA3E00B3494F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FABBA5C1231ECA3E00B3494F /* AppDelegate.swift in Sources */,
+				FABBA5D8231ECDDA00B3494F /* MainCoordinator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -514,6 +638,11 @@
 			target = FA2F062323055528005159A9 /* NavFive */;
 			targetProxy = FA2F062923055528005159A9 /* PBXContainerItemProxy */;
 		};
+		FABBA5D4231ECB1E00B3494F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA2F062323055528005159A9 /* NavFive */;
+			targetProxy = FABBA5D3231ECB1E00B3494F /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -521,6 +650,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				FA2F061723055497005159A9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FABBA5C9231ECA4000B3494F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FABBA5CA231ECA4000B3494F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -753,6 +890,48 @@
 			};
 			name = Release;
 		};
+		FABBA5CD231ECA4000B3494F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1996BE4DFEEFAD61F36EF86F /* Pods-NavFive-Silly.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UGM934F4MU;
+				INFOPLIST_FILE = Silly/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "net.caroline-weisberg.Silly";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FABBA5CE231ECA4000B3494F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E5D2E420E3328E0CDE1198F /* Pods-NavFive-Silly.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UGM934F4MU;
+				INFOPLIST_FILE = Silly/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "net.caroline-weisberg.Silly";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -779,6 +958,15 @@
 			buildConfigurations = (
 				FA2F062E23055528005159A9 /* Debug */,
 				FA2F062F23055528005159A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FABBA5CF231ECA4000B3494F /* Build configuration list for PBXNativeTarget "Silly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FABBA5CD231ECA4000B3494F /* Debug */,
+				FABBA5CE231ECA4000B3494F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
