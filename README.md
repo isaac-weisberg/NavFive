@@ -19,3 +19,13 @@ There are a few questions, more in the philosophical domain though, when it come
 Cut to the chase, there is no problem when the state of a coordinated view changes really is all about presence or absence of any of the views in question. You `pop` or `push` and the state of the controllers stack is constantly represented by one model - and array of `UIViewController`. Alternatively, a chain of modally presented `UIViewController`s is represented as a linked list in the Apple's frameworks or can be simplified to an array of `UIViewController`. This is by the way the reason why I called the current implementation a `SequentialCoordinator` - because its states model is a sequesce of views.
 
 But the current problem which is implicitly bugging me already for 2 weeks straight is how the fuck do I handle the case of the `interactivePopGestureRecognizer` or any custom interactive transion. There a couple of options and they all suck my pee-pee dick.
+
+# Another problematic field
+
+What is currently hardly an achievable milestone is making an app that features a single reactive subscription. Theoritically it is possible to see the whole app's user spaces be comprised of zero dynamically allocated objects (excluding the common Foundation and UIKit suspects e.g. `UIApplication`). And thus the app at the beginning of its lifecycle would look like a bunch of unallocated closures and data structures, right until the `applicationDidFinishLaunching`.
+
+What you see happenning during the synchronous pass of the `applicationDidFinishLaunching` is the following sequence of events:
+
+1. A subscription to the main coordinator gets created.
+1. A `UIWindow` (retained by the subscription) gets instantiated by the main coordinator, recieves `makeKey` message and gets mounted into the `UIApplication.windows` array.
+1. A child coordinator gets instantiated. It mounts a bunch of view controllers to the window. It maps a bunch of possible view state changes one into another and feeds the results of state changes uptop into the parent coordinator.
