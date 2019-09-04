@@ -34,6 +34,8 @@
 		FABBA5D1231ECB1E00B3494F /* NavFive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2F062423055528005159A9 /* NavFive.framework */; };
 		FABBA5D2231ECB1E00B3494F /* NavFive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA2F062423055528005159A9 /* NavFive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FABBA5D8231ECDDA00B3494F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBA5D7231ECDDA00B3494F /* MainCoordinator.swift */; };
+		FAD86D50231FC0F600CCF9D2 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD86D4F231FC0F600CCF9D2 /* TopViewController.swift */; };
+		FAD86D52231FC38600CCF9D2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD86D51231FC38600CCF9D2 /* DetailViewController.swift */; };
 		FAE6B7C623115E50009C7828 /* MainGamesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6B7C523115E50009C7828 /* MainGamesTableView.swift */; };
 		FAE6B7C923115FE0009C7828 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE6B7C823115FE0009C7828 /* MainViewController.xib */; };
 		FAE6B7CC23116368009C7828 /* XibModularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6B7CB23116368009C7828 /* XibModularView.swift */; };
@@ -131,6 +133,8 @@
 		FABBA5CC231ECA4000B3494F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FABBA5D6231ECB5900B3494F /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		FABBA5D7231ECDDA00B3494F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		FAD86D4F231FC0F600CCF9D2 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
+		FAD86D51231FC38600CCF9D2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FAE6B7C523115E50009C7828 /* MainGamesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGamesTableView.swift; sourceTree = "<group>"; };
 		FAE6B7C823115FE0009C7828 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		FAE6B7CB23116368009C7828 /* XibModularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibModularView.swift; sourceTree = "<group>"; };
@@ -323,6 +327,8 @@
 				FABBA5C9231ECA4000B3494F /* LaunchScreen.storyboard */,
 				FABBA5CC231ECA4000B3494F /* Info.plist */,
 				FABBA5D7231ECDDA00B3494F /* MainCoordinator.swift */,
+				FAD86D4F231FC0F600CCF9D2 /* TopViewController.swift */,
+				FAD86D51231FC38600CCF9D2 /* DetailViewController.swift */,
 			);
 			path = Silly;
 			sourceTree = "<group>";
@@ -625,8 +631,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAD86D50231FC0F600CCF9D2 /* TopViewController.swift in Sources */,
 				FABBA5C1231ECA3E00B3494F /* AppDelegate.swift in Sources */,
 				FABBA5D8231ECDDA00B3494F /* MainCoordinator.swift in Sources */,
+				FAD86D52231FC38600CCF9D2 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

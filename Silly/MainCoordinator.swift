@@ -9,8 +9,8 @@ struct MainCoordinator {
     
     struct State: NaviUnitConvertible {
         enum Step {
-            case main(UIViewController)
-            case detail(UIViewController)
+            case main(TopViewController)
+            case detail(DetailViewController)
         }
         
         let steps: [Step]
@@ -19,7 +19,9 @@ struct MainCoordinator {
             let controllers = steps
                 .map { step -> SequentialNaviUnit in
                     switch step {
-                    case .main(let controller), .detail(let controller):
+                    case .main(let controller):
+                        return SequentialNaviUnit.one(controller)
+                    case .detail(let controller):
                         return SequentialNaviUnit.one(controller)
                     }
                 }
@@ -34,7 +36,33 @@ struct MainCoordinator {
         return Instance(view: view, initial: .main) { action, dispatcher, state in
             switch action {
             case .main:
-                // aw fuck no wait
+                let controller = TopViewController()
+                
+                controller.proceedRequested
+                    .map {
+                        Action.detail
+                    }
+                    .bind(to: dispatcher)
+                    .disposed(by: controller.disposeBag)
+                
+                let step = [State.Step.main(controller)]
+                let newSteps = { () -> [MainCoordinator.State.Step] in
+                    if let oldSteps = state?.steps {
+                        return oldSteps + step
+                    }
+                    return step
+                }()
+                return State(steps: newSteps)
+            case .detail:
+                let controller = DetailViewController()
+                let step = [State.Step.detail(controller)]
+                let newSteps = { () -> [MainCoordinator.State.Step] in
+                    if let oldSteps = state?.steps {
+                        return oldSteps + step
+                    }
+                    return step
+                }()
+                return State(steps: newSteps)
             }
         }
     }
