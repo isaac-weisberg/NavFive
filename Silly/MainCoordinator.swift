@@ -32,7 +32,7 @@ struct MainCoordinator {
     
     typealias Instance = SequetialCoordinator<State, Action>
     
-    func make(view: SequentialNavitroller) -> Instance {
+    static func make(view: SequentialNavitroller) -> Instance {
         return Instance(view: view, initial: .main) { action, dispatcher, state in
             switch action {
             case .main:

@@ -27,5 +27,5 @@ What is currently hardly an achievable milestone is making an app that features 
 What you see happenning during the synchronous pass of the `applicationDidFinishLaunching` is the following sequence of events:
 
 1. A subscription to the main coordinator gets created.
-1. A `UIWindow` (retained by the subscription) gets instantiated by the main coordinator, recieves `makeKey` message and gets mounted into the `UIApplication.windows` array.
+1. A `UIWindow` (retained by the subscription) gets instantiated by the main coordinator, recieves `makeKey` message and gets mounted into the `UIApplication.windows` array, gets a root view controller.
 1. A child coordinator gets instantiated. It mounts a bunch of view controllers to the window. It maps a bunch of possible view state changes one into another and feeds the results of state changes uptop into the parent coordinator.

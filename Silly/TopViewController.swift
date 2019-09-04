@@ -8,15 +8,17 @@ class TopViewController: UIViewController {
     let proceedRequested: Observable<Void>
     
     init() {
-        let button = UIButton(frame: .zero)
+        let button = UIButton(type: .system)
         
         proceedRequested = button.rx.tap
             .asObservable()
         
         super.init(nibName: nil, bundle: nil)
         
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Proceed", for: .normal)
         
+        view.backgroundColor = .white
         view.addSubview(button)
         
         NSLayoutConstraint.activate([

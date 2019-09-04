@@ -8,6 +8,9 @@ class DetailViewController: UIViewController {
         
         let label = UILabel(frame: .zero)
         label.text = "This is detail"
+        view.backgroundColor = .white
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(label)
         
